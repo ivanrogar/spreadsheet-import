@@ -30,6 +30,7 @@ You must provide two parameters when the CLI command starts:
 - path to a local file or a direct link to remote file (you can use the 'catalog_sample.xml' as it'll be copied to the root of the project)
 - ID of the existing spreadsheet you have previously shared with your service account
 - the spreadsheet will be cleared before the new data will be inserted
+- for this exercise, we will assume that the default sheet (Sheet1) exists and we will only be updating that sheet
 
 ### Run shell
 ```
