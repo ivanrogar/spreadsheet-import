@@ -1,0 +1,32 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    _instanceof:
+        App\Contract\ReaderInterface:
+            tags: ['import.reader']
+
+        App\Contract\Spreadsheet\WriterInterface:
+            tags: [ 'import.spreadsheet.writer' ]
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    App\Factory\Client\GoogleClientFactory:
+        arguments:
+            $credentialsFolder: '%kernel.project_dir%/var/'
+
+    App\Reader\Pool:
+        arguments:
+            $readers: !tagged import.reader
+
+    App\Writer\Pool:
+        arguments:
+            $writers: !tagged import.spreadsheet.writer
