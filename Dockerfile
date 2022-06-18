@@ -12,6 +12,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer clear-cache
 
 COPY . /app
+RUN rm -rf var
+RUN mkdir var
 COPY docker/google_client_credentials.json /app/var
 COPY docker/catalog_sample.xml /app
 

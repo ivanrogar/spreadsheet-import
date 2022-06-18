@@ -21,7 +21,7 @@ up:
 	$(DC) up -d
 
 go_bash:
-	@$(RUN) /bin/bash
+	@$(RUN) /bin/sh
 
 test:
 	@$(RUN) phpdbg -qrr bin/phpunit --coverage-text
