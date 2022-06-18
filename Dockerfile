@@ -1,7 +1,7 @@
 FROM php:8.0-cli-alpine
 
 RUN apk update
-RUN apk add --no-cache --virtual bash git openssh
+RUN apk add --no-cache --virtual bash git openssh ca-certificates curl
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER 1
