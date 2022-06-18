@@ -26,3 +26,4 @@
 
 /coverage
 /coffee*.xml
+.DS_Store
