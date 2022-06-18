@@ -1,5 +1,7 @@
 FROM php:8.0-cli-alpine
 
+RUN apk add --no-cache --virtual bash git
+
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
