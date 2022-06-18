@@ -44,11 +44,21 @@ class GoogleSpreadsheetWriter implements WriterInterface
                 'values' => $flattenedData
             ]);
 
+            $clearBody = new Sheets\ClearValuesRequest();
+
             $params = [
                 'valueInputOption' => 'RAW'
             ];
 
             $range = 'Sheet1';
+
+            $sheets
+                ->spreadsheets_values
+                ->clear(
+                    $identifier,
+                    $range,
+                    $clearBody
+                );
 
             $sheets
                 ->spreadsheets_values

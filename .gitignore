@@ -27,3 +27,5 @@
 /coverage
 /coffee*.xml
 .DS_Store
+
+/docker/google_client_credentials.json

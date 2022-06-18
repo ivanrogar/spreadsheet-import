@@ -80,6 +80,18 @@ class GoogleSpreadsheetWriterTest extends TestCase
             'values' => $expectedData
         ]);
 
+        $expectedClearBody = new Sheets\ClearValuesRequest();
+
+        $this
+            ->spreadsheetsValues
+            ->expects($this->once())
+            ->method('clear')
+            ->with(
+                $expectedIdentifier,
+                $expectedRange,
+                $expectedClearBody
+            );
+
         $this
             ->spreadsheetsValues
             ->expects($this->once())

@@ -36,18 +36,4 @@ class DefaultLoaderTest extends TestCase
         // when, then
         $subject->load($expectedInputPath);
     }
-
-    public function testLoadFromUrl()
-    {
-        // given
-        $expectedInputPath = 'https://www.w3schools.com/xml/simple.xml';
-
-        $subject = new DefaultLoader();
-
-        // when
-        $result = $subject->load($expectedInputPath);
-
-        // then
-        $this->assertStringContainsString('<?xml version="1.0" encoding="UTF-8"?>', $result);
-    }
 }
